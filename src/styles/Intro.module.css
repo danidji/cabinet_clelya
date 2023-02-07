@@ -1,0 +1,71 @@
+.intro_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro_title {
+  margin: 4rem 0;
+  
+}
+
+.intro_title h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: #702B3D;
+
+}
+
+.intro_wrapper p {
+  margin: .5rem 0;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+.presentation_container {
+  margin: 3rem 0;
+}
+
+.presentation_container1 {
+  display: flex;
+}
+
+.image_container {
+  position: relative;
+  display: block;
+  height: 13rem;
+  width: 50%;
+}
+
+.presentation_container1 p,
+.presentation_container2 p {
+  flex: 1;
+  font-style: italic;
+  font-size: .9rem;
+  align-self: center;
+  padding: .5rem;
+  line-height: 1.2rem;
+  font-weight: 300;
+}
+
+.presentation_container2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.info_citation {
+  font-weight: normal;
+  font-style: italic;
+  color: #395C6B;
+}
+
+@media (min-width: 500px)  {
+  
+}
+
+
+
