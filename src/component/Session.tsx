@@ -10,7 +10,10 @@ export default function Session() {
                 <p>60 min / 90€</p>
                 <h3>Déroulement d&lsquo;une séance</h3>
                 <p>
-                    Les séances peuvent se faire à mon cabinet situé à Toul au : <strong>12 Avenue de la première armée française 54200 Toul</strong>,
+                    Les séances peuvent se faire à mon cabinet situé à Toul (54) au :<br />
+                    <strong>12 Avenue de la première armée française 54200 Toul</strong>
+                    <br />
+                    <br />
                     ou bien par visio avec l&lsquo;application <strong>Whatsapp</strong>.
                 </p>
                 <p>
