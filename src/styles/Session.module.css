@@ -1,0 +1,22 @@
+.session_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session_wrapper h2 {
+  margin: 1rem 0;
+}
+
+.session_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #702B3D ;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+.session_content p {
+  text-align: center;
+}

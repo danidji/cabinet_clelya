@@ -1,0 +1,24 @@
+.story_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 ;
+}
+
+.story_content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.image_container {
+  position: relative;
+  display: block;
+  height: 30rem;
+  width: 80%;
+}
+
+.story_content p {
+  flex: 1;
+  text-align: center;
+}

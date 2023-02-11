@@ -1,0 +1,33 @@
+.methods_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 ;
+}
+
+.methods_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.methods_content p {
+  text-align: center;
+}
+
+.float_block {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.image_container {
+  position: relative;
+  display: block;
+  height: 10rem; 
+  width: 50%;
+}
+
+.float_block p {
+  flex:1
+}
