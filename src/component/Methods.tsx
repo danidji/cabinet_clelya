@@ -7,23 +7,11 @@ export default function Methods() {
         <div className={styles.methods_wrapper} id="method">
             <h2>Mes méthodes</h2>
             <div className={styles.methods_content}>
-                <div className={styles.float_block}>
-                    <div className={styles.image_container}>
-                        <Image
-                            src={logoPicture}
-                            alt="Voyance logo"
-                            fill
-                            style={{
-                                objectFit: "cover",
-                            }}
-                        />
-                    </div>
-                    <p>
-                        <strong>La cartomancie</strong> est une forme de divination qui utilise des cartes, généralement des cartes à jouer, pour
-                        révéler des informations sur le passé, le présent et le futur d’une personne. Ces cartes sont interprétées par le
-                        cartomancien, il existe de nombreux types de lectures de cartes différents, chacun avec ses propres règles et interprétations.
-                    </p>
-                </div>
+                <p>
+                    <strong>La cartomancie</strong> est une forme de divination qui utilise des cartes, généralement des cartes à jouer, pour révéler
+                    des informations sur le passé, le présent et le futur d’une personne. Ces cartes sont interprétées par le cartomancien, il existe
+                    de nombreux types de lectures de cartes différents, chacun avec ses propres règles et interprétations.
+                </p>
                 <p>
                     <strong>La mediumnité</strong> est la faculté de communiquer entre les vivants et les morts, de faire passer des messages des
                     esprits et des défunts par des moyens surnaturels.

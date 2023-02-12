@@ -16,7 +16,7 @@
 
 .subtitle {
   color: #702B3D;
-
+  
 }
 
 .intro_wrapper p {
@@ -26,8 +26,10 @@
   font-weight: normal;
 }
 
+
 .presentation_container {
   margin: 3rem 0;
+  padding: 0 1rem;
 }
 
 .presentation_container1 {
@@ -63,9 +65,6 @@
   color: #395C6B;
 }
 
-@media (min-width: 500px)  {
-  
-}
 
 
 

@@ -22,3 +22,7 @@
 .session_content h3 {
   text-align: center;
 }
+
+.prices {
+  margin: .1rem 0;
+}

@@ -12,14 +12,15 @@
 }
 
 .methods_content p {
-  text-align: center;
+  text-align: left;
+  word-break: keep-all;
 }
 
-.float_block {
+/* .float_block {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-}
+} */
 
 .image_container {
   position: relative;
