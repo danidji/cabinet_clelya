@@ -5,6 +5,7 @@ import Intro from "@/component/Intro";
 import Story from "@/component/Story";
 import Methods from "@/component/Methods";
 import Session from "@/component/Session";
+import BurgerMenu from "@/component/BurgerMenu";
 
 export default function Home() {
     return (
@@ -23,7 +24,8 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
-                <NavBar />
+                {/* <NavBar /> */}
+                <BurgerMenu />
                 <Intro />
                 <Story />
                 <Methods />
