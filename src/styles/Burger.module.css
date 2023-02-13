@@ -1,6 +1,4 @@
 .burger_menu_wrapper {
-  /* display: flex;
-  flex-direction: column; */
   width: 100%;
   position: fixed;
   top: 0;
@@ -45,6 +43,11 @@
   margin: .1rem 0;
   background-color: #702B3D;
   transition: 400ms ease;
+}
+
+.burger_button.open{
+  padding: 0 0 0 .5rem;
+  
 }
 .burger_button.open span:first-child{
   transform: rotate(45deg) translateY(9px);

@@ -1,4 +1,6 @@
 import {useState} from "react";
+import Image from "next/image";
+import logoPicture from "../../public/logo-voyance.png";
 
 import NavBar from "./NavBar";
 import styles from "@/styles/Burger.module.css";
