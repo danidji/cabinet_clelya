@@ -4,7 +4,8 @@ import styles from "@/styles/Methods.module.css";
 
 export default function Methods() {
     return (
-        <div className={styles.methods_wrapper} id="method">
+        <div className={styles.methods_wrapper}>
+            <div className={styles.anchor} id="method"></div>
             <h2>Mes méthodes</h2>
             <div className={styles.methods_content}>
                 <p>

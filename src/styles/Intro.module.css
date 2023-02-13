@@ -13,6 +13,10 @@
   font-size: 2rem;
   text-align: center;
 }
+.intro_title h2 {
+  font-size: 1.2rem;
+  text-align: center;
+}
 
 .subtitle {
   color: #702B3D;

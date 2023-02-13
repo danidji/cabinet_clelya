@@ -3,6 +3,7 @@ import styles from "@/styles/Session.module.css";
 export default function Session() {
     return (
         <div className={styles.session_wrapper}>
+            <div className={styles.anchor} id="session"></div>
             <h2>Mes séances</h2>
             <div className={styles.session_content}>
                 <h3>Tarifs</h3>

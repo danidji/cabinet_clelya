@@ -3,6 +3,12 @@
   flex-direction: column;
   align-items: center;
   margin: 2rem 0 ;
+  position: relative;
+}
+
+.anchor {
+  position: absolute;
+  top :-2.5rem;
 }
 
 .story_content {

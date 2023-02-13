@@ -6,6 +6,7 @@ import Story from "@/component/Story";
 import Methods from "@/component/Methods";
 import Session from "@/component/Session";
 import BurgerMenu from "@/component/BurgerMenu";
+import Footer from "@/component/Footer";
 
 export default function Home() {
     return (
@@ -30,6 +31,7 @@ export default function Home() {
                 <Story />
                 <Methods />
                 <Session />
+                <Footer />
             </main>
         </>
     );

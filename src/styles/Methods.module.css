@@ -2,8 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0 ;
+  margin: 2rem 0 ; 
+  position: relative;
 }
+
+.anchor {
+  position: absolute;
+  top :-3rem;
+}
+
 
 .methods_content {
   display: flex;

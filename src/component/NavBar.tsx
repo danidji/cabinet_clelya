@@ -6,13 +6,16 @@ const nav_menu = [
     {id: "session", label: "Mes séances"},
 ];
 
-export default function NavBar() {
+export default function NavBar({closeMenu}: {closeMenu?: () => void}) {
+    const onClose = () => {
+        if (closeMenu) closeMenu();
+    };
     return (
         <div className={styles.navbar_wrapper}>
             <ul>
                 {nav_menu.map((item, id) => (
                     <li key={`nav-menu-${id}`}>
-                        <a href={`#${item.id}`}>
+                        <a href={`#${item.id}`} onClick={() => onClose()}>
                             <h4>{item.label}</h4>
                         </a>
                     </li>

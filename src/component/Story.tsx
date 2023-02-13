@@ -4,7 +4,8 @@ import styles from "@/styles/Story.module.css";
 
 export default function Story() {
     return (
-        <div className={styles.story_wrapper} id="story">
+        <div className={styles.story_wrapper}>
+            <div className={styles.anchor} id="story"></div>
             <h2>Mon histoire</h2>
             <div className={styles.story_content}>
                 <div className={styles.image_container}>

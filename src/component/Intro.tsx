@@ -7,10 +7,8 @@ export default function Intro() {
     return (
         <div className={styles.intro_wrapper}>
             <div className={styles.intro_title}>
-                <h1>
-                    Cabinet Clelya
-                    <br /> Voyance et Médiumnité à Toul
-                </h1>
+                <h1>Cabinet Clelya</h1>
+                <h2>Voyance et Médiumnité à Toul</h2>
             </div>
             <p className={styles.subtitle}>Vous souhaitez connaître votre futur ou communiquer avec le monde invisible.</p>
             <p className={styles.subtitle}>Bienvenue sur mon site.</p>
