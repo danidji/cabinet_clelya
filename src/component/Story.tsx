@@ -1,5 +1,5 @@
 import Image from "next/image";
-import outsidePicture from "../../public/clelya-portrait-interieur.jpeg";
+import outsidePicture from "../../public/clelya-portrait-exterieur.jpeg";
 import styles from "@/styles/Story.module.css";
 
 export default function Story() {
