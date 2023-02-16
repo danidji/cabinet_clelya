@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   z-index: 999;
-  height: 9rem;
+  height: 11rem;
   background-color: #FCF2F0;
   transition: transform 0.3s ease-out;
   padding: 0 1.5rem;
@@ -13,7 +13,7 @@
 }
 
 .burger_menu_wrapper.close {
-  transform: translateY(-9.2rem);
+  transform: translateY(-11.2rem);
 }
 
 
