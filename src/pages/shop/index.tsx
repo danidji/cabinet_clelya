@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import Head from "next/head";
 import Image from "next/image";
 import BurgerMenu from "@/component/BurgerMenu";
+import PaypalButton from "@/component/PaypalButton";
 import articlePicture from "../../../public/consultation-voyance.jpg";
 
 import styles from "@/styles/Shop.module.css";
@@ -109,6 +110,7 @@ export default function Shop() {
                             <p>Total :</p>
                             <p>{totalPrice} €</p>
                         </div>
+                        <PaypalButton amount={totalPrice} />
                     </div>
                 </div>
             </div>

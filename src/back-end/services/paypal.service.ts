@@ -68,6 +68,7 @@ const capturePayment = async (orderId: string): Promise<any> => {
 
     const response = await axios.post(
       url,
+      {},
       {
         headers: {
           "Authorization": bearerAuth,
@@ -75,6 +76,7 @@ const capturePayment = async (orderId: string): Promise<any> => {
         }
       },
     )
+
     return response.data
   } catch (error: any) {
     console.log({ error });
