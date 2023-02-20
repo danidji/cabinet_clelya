@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Cors from "cors"
-import initMiddleware from '@/back-end/services/init.middleware'
+import initMiddleware from '@/services/api/init.middleware'
 
-import PaypalService from '@/back-end/services/paypal.service'
+import PaypalService from '@/services/api/paypal.service'
 import { AxiosError } from 'axios'
 
 const orderID = "test"

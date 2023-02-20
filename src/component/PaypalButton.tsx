@@ -1,22 +1,20 @@
-import {useState} from "react";
-
 import {PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js";
+
+import PaymentService from "@/services/client/payment.services";
 
 interface PaypalButtonProps {
     amount: number;
 }
 
 export default function PaypalButton({amount}: PaypalButtonProps) {
-    // const [paid, setPaid] = useState(false);
+    const handleSuccess = (details: any) => {
+        const name = details.payer.name.given_name;
+        alert(`Merci ${name}, votre paiement à bien été effectué`);
+    };
 
-    // const handleSuccess = () => {
-    //     setPaid(true);
-    //     // Envoyer une notification au backend pour confirmer le paiement
-    // };
-
-    // const handleCancel = () => {
-    //     // Gérer l'annulation du paiement
-    // };
+    const handleCancel = () => {
+        alert(`Ouups ! Votre paiement a été annulé`);
+    };
 
     const initialOptions = {
         "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID as string,
@@ -29,23 +27,17 @@ export default function PaypalButton({amount}: PaypalButtonProps) {
         <div className="paypal_buttons_container">
             <PayPalScriptProvider options={initialOptions}>
                 <PayPalButtons
-                    createOrder={(data, actions) => {
-                        console.log({amount});
-                        return actions.order.create({
-                            purchase_units: [
-                                {
-                                    amount: {
-                                        value: `${amount}`,
-                                    },
-                                },
-                            ],
-                        });
+                    createOrder={async () => {
+                        return await PaymentService.createPayment(amount);
                     }}
-                    onApprove={(data, actions: any) => {
-                        return actions.order.capture().then((details: any) => {
-                            const name = details.payer.name.given_name;
-                            alert(`Transaction completed by ${name}`);
-                        });
+                    onApprove={async (data) => {
+                        try {
+                            const details = await PaymentService.capturePayment(data.orderID);
+                            handleSuccess(details);
+                        } catch (error) {
+                            console.log({error});
+                            handleCancel();
+                        }
                     }}
                 />
             </PayPalScriptProvider>
