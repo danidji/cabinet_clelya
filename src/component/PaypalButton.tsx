@@ -24,23 +24,21 @@ export default function PaypalButton({amount}: PaypalButtonProps) {
     };
 
     return (
-        <div className="paypal_buttons_container">
-            <PayPalScriptProvider options={initialOptions}>
-                <PayPalButtons
-                    createOrder={async () => {
-                        return await PaymentService.createPayment(amount);
-                    }}
-                    onApprove={async (data) => {
-                        try {
-                            const details = await PaymentService.capturePayment(data.orderID);
-                            handleSuccess(details);
-                        } catch (error) {
-                            console.log({error});
-                            handleCancel();
-                        }
-                    }}
-                />
-            </PayPalScriptProvider>
-        </div>
+        <PayPalScriptProvider options={initialOptions}>
+            <PayPalButtons
+                createOrder={async () => {
+                    return await PaymentService.createPayment(amount);
+                }}
+                onApprove={async (data) => {
+                    try {
+                        const details = await PaymentService.capturePayment(data.orderID);
+                        handleSuccess(details);
+                    } catch (error) {
+                        console.log({error});
+                        handleCancel();
+                    }
+                }}
+            />
+        </PayPalScriptProvider>
     );
 }

@@ -1,4 +1,5 @@
 import styles from "@/styles/Session.module.css";
+import Link from "next/link";
 
 export default function Session() {
     return (
@@ -19,6 +20,9 @@ export default function Session() {
                 </p>
                 <p>
                     Prendre Rendez-Vous : <strong>07 63 75 72 73</strong>
+                </p>
+                <p>
+                    <Link href={"/boutique"}>Réserver une séance</Link>
                 </p>
             </div>
         </div>
