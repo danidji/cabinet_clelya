@@ -1,0 +1,36 @@
+.modal {
+  background-color: #FCF2F0;
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 5rem;
+  z-index: 99999;
+  border-radius: 1rem;
+  padding: .5rem;
+  overflow: scroll;
+    
+}
+
+.overlay_modal {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(66, 75, 84, .5);
+}
+
+.header_modal {
+  height: 3rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: #FCF2F0;
+}
+
+.header_modal button {
+  background-color: transparent;
+  border: none;
+}
+   

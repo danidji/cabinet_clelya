@@ -5,8 +5,10 @@ import Image from "next/image";
 import BurgerMenu from "@/component/BurgerMenu";
 import PaypalButton from "@/component/PaypalButton";
 import Footer from "@/component/Footer";
+import Modal from "@/component/Modal";
 
 import articlePicture from "../../../public/consultation-voyance.jpg";
+import iconInfo from "../../../public/icon_info.svg";
 
 import styles from "@/styles/Shop.module.css";
 
@@ -15,6 +17,7 @@ export default function Shop() {
     const [unitPrice, setUnitPrice] = useState<number>(60);
     const [quantity, setQuantity] = useState<number>(1);
     const [totalPrice, setTotalPrice] = useState<number>(60);
+    const [openModal, setOpenModal] = useState<boolean>(false);
 
     const handleChoice = (choice: string) => {
         setChoice(choice);
@@ -60,7 +63,8 @@ export default function Shop() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={styles.shop_page_container}>
-                <BurgerMenu />
+                {!openModal && <BurgerMenu />}
+
                 <div className={styles.shop_content}>
                     <h1>Consultation Voyance</h1>
                     <div className={styles.image_container}>
@@ -83,6 +87,9 @@ export default function Shop() {
                         <div className={styles.price_container}>
                             <p>Prix de la séance : </p>
                             <p>{unitPrice} €</p>
+                            <button onClick={() => setOpenModal(!openModal)}>
+                                <Image src={iconInfo} width={30} height={30} alt="icon info" />
+                            </button>
                         </div>
                         <p>Durée : </p>
                         <div className={styles.button_container}>
@@ -114,11 +121,14 @@ export default function Shop() {
                             <p>{totalPrice} €</p>
                         </div>
 
-                        <div className={styles.paypal_buttons_container}>
-                            <PaypalButton amount={totalPrice} />
-                        </div>
+                        {!openModal && (
+                            <div className={styles.paypal_buttons_container}>
+                                <PaypalButton amount={totalPrice} />
+                            </div>
+                        )}
                     </div>
                 </div>
+                <Modal isOpen={openModal} closeModal={() => setOpenModal(false)} />
                 <Footer />
             </div>
         </>

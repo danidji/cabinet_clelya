@@ -81,15 +81,25 @@
 .price_container {
   display: flex;
   margin: .5rem 0;
+  align-items: center;
 }
 
 .price_container p {
-  flex: 1;
   margin: .5rem 0;
 }
 
+.price_container p:nth-child(1) {
+  flex: 3;
+}
 .price_container p:nth-child(2) {
+  flex: 2;
   text-align: center;
+}
+.price_container button {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .button_container {
