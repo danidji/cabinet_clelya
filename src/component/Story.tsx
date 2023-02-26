@@ -15,6 +15,7 @@ export default function Story() {
                         fill
                         style={{
                             objectFit: "cover",
+                            borderRadius: ".2rem",
                         }}
                     />
                 </div>

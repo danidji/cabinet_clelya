@@ -23,12 +23,6 @@
   word-break: keep-all;
 }
 
-/* .float_block {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-} */
-
 .image_container {
   position: relative;
   display: block;
@@ -38,4 +32,11 @@
 
 .float_block p {
   flex:1
+}
+
+
+@media (min-width: 768px)  {
+  .methods_wrapper {
+    width: 60%;
+  }
 }

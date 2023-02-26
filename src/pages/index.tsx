@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import NavBar from "../component/NavBar";
+import NavBar from "@/component/NavBar";
 import Intro from "@/component/Intro";
 import Story from "@/component/Story";
 import Methods from "@/component/Methods";
@@ -8,7 +8,10 @@ import Session from "@/component/Session";
 import BurgerMenu from "@/component/BurgerMenu";
 import Footer from "@/component/Footer";
 
+import useDetectMobileWindow from "@/hooks/useDetectMobileWindow";
+
 export default function Home() {
+    const {isMobile} = useDetectMobileWindow();
     return (
         <>
             <Head>
@@ -25,8 +28,8 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
-                {/* <NavBar /> */}
-                <BurgerMenu />
+                {isMobile ? <BurgerMenu /> : <NavBar />}
+
                 <Intro />
                 <Story />
                 <Methods />

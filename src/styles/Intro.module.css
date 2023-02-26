@@ -70,5 +70,18 @@
 }
 
 
+@media (min-width: 768px)  {
+  .intro_wrapper {
+    padding-top: 4rem;
+    width: 60%;
+  }
+  .image_container {
+    height: 30rem;
+  }
+}
+
+
+
+
 
 

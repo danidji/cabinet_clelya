@@ -6,11 +6,14 @@ import BurgerMenu from "@/component/BurgerMenu";
 import PaypalButton from "@/component/PaypalButton";
 import Footer from "@/component/Footer";
 import Modal from "@/component/Modal";
+import NavBar from "@/component/NavBar";
 
 import articlePicture from "../../../public/consultation-voyance.jpg";
 import iconInfo from "../../../public/icon_info.svg";
 
 import styles from "@/styles/Shop.module.css";
+
+import useDetectMobileWindow from "@/hooks/useDetectMobileWindow";
 
 export default function Shop() {
     const [choice, setChoice] = useState<string>("30MIN");
@@ -18,6 +21,7 @@ export default function Shop() {
     const [quantity, setQuantity] = useState<number>(1);
     const [totalPrice, setTotalPrice] = useState<number>(60);
     const [openModal, setOpenModal] = useState<boolean>(false);
+    const {isMobile} = useDetectMobileWindow();
 
     const handleChoice = (choice: string) => {
         setChoice(choice);
@@ -62,9 +66,8 @@ export default function Shop() {
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            {isMobile ? !openModal && <BurgerMenu /> : <NavBar />}
             <div className={styles.shop_page_container}>
-                {!openModal && <BurgerMenu />}
-
                 <div className={styles.shop_content}>
                     <h1>Consultation Voyance</h1>
                     <div className={styles.image_container}>
