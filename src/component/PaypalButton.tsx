@@ -1,3 +1,4 @@
+import {useState, useEffect} from "react";
 import {PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js";
 
 import PaymentService from "@/services/client/payment.services";
@@ -7,6 +8,12 @@ interface PaypalButtonProps {
 }
 
 export default function PaypalButton({amount}: PaypalButtonProps) {
+    const [paypalAmount, setPaypalAmount] = useState(amount);
+
+    useEffect(() => {
+        setPaypalAmount(amount);
+    }, [amount]);
+
     const handleSuccess = (details: any) => {
         const name = details.payer.name.given_name;
         alert(`Merci ${name}, votre paiement à bien été effectué`);
@@ -24,10 +31,11 @@ export default function PaypalButton({amount}: PaypalButtonProps) {
     };
 
     return (
-        <PayPalScriptProvider options={initialOptions}>
+        <PayPalScriptProvider options={initialOptions} deferLoading={false}>
             <PayPalButtons
+                forceReRender={[paypalAmount]}
                 createOrder={async () => {
-                    return await PaymentService.createPayment(amount);
+                    return await PaymentService.createPayment(paypalAmount);
                 }}
                 onApprove={async (data) => {
                     try {

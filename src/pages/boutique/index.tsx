@@ -45,7 +45,7 @@ export default function Shop() {
         } else {
             setTotalPrice(quantity * unitPrice);
         }
-    }, [quantity, unitPrice, choice]);
+    }, [quantity, choice, unitPrice]);
 
     return (
         <>
