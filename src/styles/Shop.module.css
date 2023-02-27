@@ -188,7 +188,10 @@
   margin-top: 2rem ;
 }
 
-
+.on_prod {
+  font-weight: bold;
+  color: #702B3D;
+}
 
 @media (max-width: 768px)  {
   .shop_page_container ul {

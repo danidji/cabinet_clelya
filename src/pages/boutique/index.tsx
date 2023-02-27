@@ -124,10 +124,14 @@ export default function Shop() {
                             <p>{totalPrice} €</p>
                         </div>
 
-                        {!openModal && (
-                            <div className={styles.paypal_buttons_container}>
-                                <PaypalButton amount={totalPrice} />
-                            </div>
+                        {process.env.NODE_ENV === "development" ? (
+                            !openModal && (
+                                <div className={styles.paypal_buttons_container}>
+                                    <PaypalButton amount={totalPrice} />
+                                </div>
+                            )
+                        ) : (
+                            <p className={styles.on_prod}>Moyen de paiement à venir...</p>
                         )}
                     </div>
                 </div>
