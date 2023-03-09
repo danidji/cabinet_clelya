@@ -5,11 +5,9 @@ import Image from "next/image";
 import BurgerMenu from "@/component/BurgerMenu";
 import PaypalButton from "@/component/PaypalButton";
 import Footer from "@/component/Footer";
-import Modal from "@/component/Modal";
 import NavBar from "@/component/NavBar";
 
 import articlePicture from "../../../public/consultation-voyance.jpg";
-import iconInfo from "../../../public/icon_info.svg";
 
 import styles from "@/styles/Shop.module.css";
 
@@ -86,13 +84,21 @@ export default function Shop() {
                             <p>en visio</p>
                         </div>
                     </div>
+                    <div className={styles.presentation_shop}>
+                        <p>
+                            Je vous propose une consultation de voyance personnalisée avec un paiement facile et sécurisé via PayPal. <br /> <br />
+                            Pour réserver votre séance, appelez-moi au 07.63.75.72.73 pour discuter de vos besoins et de vos disponibilités. Nous
+                            choisirons ensemble un jour et une heure pour votre consultation, puis vous pourrez procéder au paiement via PayPal pour
+                            confirmer votre rendez-vous. <br />
+                            <br />
+                            Je suis impatiente de vous aider à découvrir les réponses à vos questions les plus profondes et à vous guider vers votre
+                            avenir. N&apos;hésitez pas à me contacter si vous avez des questions ou des préoccupations.
+                        </p>
+                    </div>
                     <div className={styles.choice_session}>
                         <div className={styles.price_container}>
                             <p>Prix de la séance : </p>
                             <p>{unitPrice} €</p>
-                            <button onClick={() => setOpenModal(!openModal)}>
-                                <Image src={iconInfo} width={30} height={30} alt="icon info" />
-                            </button>
                         </div>
                         <p>Durée : </p>
                         <div className={styles.button_container}>
@@ -124,18 +130,13 @@ export default function Shop() {
                             <p>{totalPrice} €</p>
                         </div>
 
-                        {process.env.NODE_ENV === "development" ? (
-                            !openModal && (
-                                <div className={styles.paypal_buttons_container}>
-                                    <PaypalButton amount={totalPrice} />
-                                </div>
-                            )
-                        ) : (
-                            <p className={styles.on_prod}>Moyen de paiement à venir...</p>
+                        {!openModal && (
+                            <div className={styles.paypal_buttons_container}>
+                                <PaypalButton amount={totalPrice} />
+                            </div>
                         )}
                     </div>
                 </div>
-                <Modal isOpen={openModal} closeModal={() => setOpenModal(false)} />
                 <Footer />
             </div>
         </>

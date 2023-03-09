@@ -15,7 +15,7 @@
   text-decoration: none;
   color: #702B3D;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .shop_content {
@@ -72,6 +72,15 @@
   color: #702B3D;
   opacity: 1;
   z-index: 999;
+}
+
+.presentation_shop {
+  margin: 2rem 0;
+}
+
+.presentation_shop p {
+  font-size: 1.2rem;
+  
 }
 
 .choice_session p {
@@ -237,7 +246,5 @@
   .choice_session  {
     width: 70%;
 }
-
-
 
 }

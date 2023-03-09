@@ -78,6 +78,13 @@
   .image_container {
     height: 30rem;
   }
+
+  .presentation_container1 p,
+  .presentation_container2 p {
+    font-size: 1.1rem;
+}
+
+  
 }
 
 
