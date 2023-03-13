@@ -34,17 +34,39 @@ export default function PaypalButton({amount}: PaypalButtonProps) {
         <PayPalScriptProvider options={initialOptions} deferLoading={false}>
             <PayPalButtons
                 forceReRender={[paypalAmount]}
-                createOrder={async () => {
-                    return await PaymentService.createPayment(paypalAmount);
+                // createOrder={async () => {
+                //     return await PaymentService.createPayment(paypalAmount);
+                // }}
+                createOrder={(data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [
+                            {
+                                amount: {
+                                    value: paypalAmount.toString(),
+                                },
+                            },
+                        ],
+                    });
                 }}
-                onApprove={async (data) => {
-                    try {
-                        const details = await PaymentService.capturePayment(data.orderID);
-                        handleSuccess(details);
-                    } catch (error) {
-                        console.log({error});
-                        handleCancel();
-                    }
+                // onApprove={async (data) => {
+                //     try {
+                //         const details = await PaymentService.capturePayment(data.orderID);
+                //         handleSuccess(details);
+                //     } catch (error) {
+                //         console.log({error});
+                //         handleCancel();
+                //     }
+                // }}
+                onApprove={(data, actions: any) => {
+                    return actions.order
+                        .capture()
+                        .then((details: any) => {
+                            handleSuccess(details);
+                        })
+                        .catch((error: any) => {
+                            console.log({error});
+                            handleCancel();
+                        });
                 }}
             />
         </PayPalScriptProvider>
