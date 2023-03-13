@@ -1,8 +1,6 @@
 import {useState, useEffect} from "react";
 import {PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js";
 
-import PaymentService from "@/services/client/payment.services";
-
 interface PaypalButtonProps {
     amount: number;
 }
@@ -34,9 +32,6 @@ export default function PaypalButton({amount}: PaypalButtonProps) {
         <PayPalScriptProvider options={initialOptions} deferLoading={false}>
             <PayPalButtons
                 forceReRender={[paypalAmount]}
-                // createOrder={async () => {
-                //     return await PaymentService.createPayment(paypalAmount);
-                // }}
                 createOrder={(data, actions) => {
                     return actions.order.create({
                         purchase_units: [
@@ -48,15 +43,6 @@ export default function PaypalButton({amount}: PaypalButtonProps) {
                         ],
                     });
                 }}
-                // onApprove={async (data) => {
-                //     try {
-                //         const details = await PaymentService.capturePayment(data.orderID);
-                //         handleSuccess(details);
-                //     } catch (error) {
-                //         console.log({error});
-                //         handleCancel();
-                //     }
-                // }}
                 onApprove={(data, actions: any) => {
                     return actions.order
                         .capture()
