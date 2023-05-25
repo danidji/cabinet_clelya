@@ -13,21 +13,25 @@ import styles from "@/styles/Shop.module.css";
 
 import useDetectMobileWindow from "@/hooks/useDetectMobileWindow";
 
+export enum Price {
+    "30MIN" = 30,
+    "60MIN" = 60,
+}
+
 export default function Shop() {
     const [choice, setChoice] = useState<string>("30MIN");
-    const [unitPrice, setUnitPrice] = useState<number>(60);
+    const [unitPrice, setUnitPrice] = useState<number>(Price["30MIN"]);
     const [quantity, setQuantity] = useState<number>(1);
-    const [totalPrice, setTotalPrice] = useState<number>(60);
-    const [openModal, setOpenModal] = useState<boolean>(false);
+    const [totalPrice, setTotalPrice] = useState<number>(Price["30MIN"]);
     const {isMobile} = useDetectMobileWindow();
 
     const handleChoice = (choice: string) => {
         setChoice(choice);
         if (choice === "30MIN") {
-            setUnitPrice(60);
+            setUnitPrice(Price["30MIN"]);
         }
         if (choice === "60MIN") {
-            setUnitPrice(90);
+            setUnitPrice(Price["60MIN"]);
         }
     };
 
@@ -42,11 +46,7 @@ export default function Shop() {
     };
 
     useEffect(() => {
-        if (choice === "30MIN" && quantity === 2) {
-            setTotalPrice(90);
-        } else {
-            setTotalPrice(quantity * unitPrice);
-        }
+        setTotalPrice(quantity * unitPrice);
     }, [quantity, choice, unitPrice]);
 
     return (
@@ -64,7 +64,7 @@ export default function Shop() {
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {isMobile ? !openModal && <BurgerMenu /> : <NavBar />}
+            {isMobile ? <BurgerMenu /> : <NavBar />}
             <div className={styles.shop_page_container}>
                 <div className={styles.shop_content}>
                     <h1>Consultation Voyance</h1>
@@ -130,11 +130,9 @@ export default function Shop() {
                             <p>{totalPrice} €</p>
                         </div>
 
-                        {!openModal && (
-                            <div className={styles.paypal_buttons_container}>
-                                <PaypalButton amount={totalPrice} />
-                            </div>
-                        )}
+                        <div className={styles.paypal_buttons_container}>
+                            <PaypalButton amount={totalPrice} />
+                        </div>
                     </div>
                 </div>
                 <Footer />
