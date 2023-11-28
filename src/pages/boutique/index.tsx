@@ -20,9 +20,9 @@ export enum Price {
 
 export default function Shop() {
     const [choice, setChoice] = useState<string>("30MIN");
-    const [unitPrice, setUnitPrice] = useState<number>(Price["30MIN"]);
+    const [unitPrice, setUnitPrice] = useState<number>(Price["60MIN"]);
     const [quantity, setQuantity] = useState<number>(1);
-    const [totalPrice, setTotalPrice] = useState<number>(Price["30MIN"]);
+    const [totalPrice, setTotalPrice] = useState<number>(Price["60MIN"]);
     const {isMobile} = useDetectMobileWindow();
 
     const handleChoice = (choice: string) => {
@@ -97,11 +97,17 @@ export default function Shop() {
                     </div>
                     <div className={styles.choice_session}>
                         <div className={styles.price_container}>
-                            <p>Prix de la séance : </p>
+                            <p>Prix d&apos;une heure de séance : </p>
                             <p>{unitPrice} €</p>
                         </div>
-                        <p>Durée : </p>
-                        <div className={styles.button_container}>
+                        <br />
+                        <div className={styles.price_container}>
+                            <p>La demie heure supplémentaire : </p>
+                            <p>{Price["30MIN"]} €</p>
+                        </div>
+                        <br />
+                        {/* <p>Durée : </p> */}
+                        {/* <div className={styles.button_container}>
                             <button
                                 className={`${styles.choice_button} ${choice === "30MIN" ? styles.active : null}`}
                                 onClick={() => handleChoice("30MIN")}
@@ -132,7 +138,7 @@ export default function Shop() {
 
                         <div className={styles.paypal_buttons_container}>
                             <PaypalButton amount={totalPrice} />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <Footer />
