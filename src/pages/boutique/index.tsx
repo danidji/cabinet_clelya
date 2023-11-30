@@ -102,7 +102,7 @@ export default function Shop() {
                         </div>
                         <br />
                         <div className={styles.price_container}>
-                            <p>La demie heure supplémentaire : </p>
+                            <p>Pour 30 min supplémentaires : </p>
                             <p>{Price["30MIN"]} €</p>
                         </div>
                         <br />
