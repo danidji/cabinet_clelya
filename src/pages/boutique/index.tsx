@@ -85,60 +85,37 @@ export default function Shop() {
                         </div>
                     </div>
                     <div className={styles.presentation_shop}>
+                        <h2>Séances au Cabinet</h2>
+                        <p>Profitez d'une séance en personne dans notre cabinet pour 60 euros, offrant une consultation approfondie d'une heure.</p>
+
+                        <h2>Séances en Visio avec Paylib</h2>
+                        <p>Optez pour la flexibilité avec nos séances en visio. Choisissez la durée qui vous convient, avec des tarifs clairs :</p>
+                        <ul className={styles.ul_price}>
+                            <li>
+                                <span className={styles.span_text}>8 min : 18,90€</span>
+                            </li>
+                            <li>
+                                <span className={styles.span_text}>15 min : 29,90€</span>
+                            </li>
+                            <li>
+                                <span className={styles.span_text}>30 min : 57,90€</span>
+                            </li>
+                        </ul>
+
                         <p>
-                            Je vous propose une consultation de voyance personnalisée avec un paiement facile et sécurisé via PayPal. <br /> <br />
-                            Pour réserver votre séance, appelez-moi au 07.63.75.72.73 pour discuter de vos besoins et de vos disponibilités. Nous
-                            choisirons ensemble un jour et une heure pour votre consultation, puis vous pourrez procéder au paiement via PayPal pour
-                            confirmer votre rendez-vous. <br />
-                            <br />
+                            Pour réserver votre séance, appelez-moi au <span className={styles.span_text}>07.63.75.72.73</span> pour discuter de vos
+                            besoins et de vos disponibilités. Nous choisirons ensemble un jour et une heure pour votre consultation, puis vous pourrez
+                            procéder au paiement via Paylib pour confirmer votre rendez-vous.
+                        </p>
+
+                        <h2>Extension du Temps en Visio</h2>
+                        <p>Prolongez votre expérience en ajoutant du temps à votre séance en visio, à des tarifs flexibles.</p>
+
+                        <p>Explorez le monde mystérieux de la voyance avec simplicité, et laissez-vous guider par nos consultations authentiques.</p>
+                        <p>
                             Je suis impatiente de vous aider à découvrir les réponses à vos questions les plus profondes et à vous guider vers votre
                             avenir. N&apos;hésitez pas à me contacter si vous avez des questions ou des préoccupations.
                         </p>
-                    </div>
-                    <div className={styles.choice_session}>
-                        <div className={styles.price_container}>
-                            <p>Prix d&apos;une heure de séance : </p>
-                            <p>{unitPrice} €</p>
-                        </div>
-                        <br />
-                        <div className={styles.price_container}>
-                            <p>Pour 30 min supplémentaires : </p>
-                            <p>{Price["30MIN"]} €</p>
-                        </div>
-                        <br />
-                        {/* <p>Durée : </p> */}
-                        {/* <div className={styles.button_container}>
-                            <button
-                                className={`${styles.choice_button} ${choice === "30MIN" ? styles.active : null}`}
-                                onClick={() => handleChoice("30MIN")}
-                            >
-                                30 min
-                            </button>
-                            <button
-                                className={`${styles.choice_button} ${choice === "60MIN" ? styles.active : null}`}
-                                onClick={() => handleChoice("60MIN")}
-                            >
-                                1 h
-                            </button>
-                        </div>
-                        <div className={styles.price_quantity_content}>
-                            <p>Quantité :</p>
-                            <div className={styles.quantity_container}>
-                                <div className={styles.price_quantity}>
-                                    <button onClick={substractQuantity}>-</button>
-                                    <div className={styles.quantity}>{quantity}</div>
-                                    <button onClick={addQuantity}>+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.total_price}>
-                            <p>Total :</p>
-                            <p>{totalPrice} €</p>
-                        </div>
-
-                        <div className={styles.paypal_buttons_container}>
-                            <PaypalButton amount={totalPrice} />
-                        </div> */}
                     </div>
                 </div>
                 <Footer />
