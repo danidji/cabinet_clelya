@@ -86,7 +86,10 @@ export default function Shop() {
                     </div>
                     <div className={styles.presentation_shop}>
                         <h2>Séances au Cabinet</h2>
-                        <p>Profitez d'une séance en personne dans notre cabinet pour 60 euros, offrant une consultation approfondie d'une heure.</p>
+                        <p>
+                            Profitez d&apos;une séance en personne dans notre cabinet pour 60 euros, offrant une consultation approfondie d&apos;une
+                            heure.
+                        </p>
 
                         <h2>Séances en Visio avec Paylib</h2>
                         <p>Optez pour la flexibilité avec nos séances en visio. Choisissez la durée qui vous convient, avec des tarifs clairs :</p>
