@@ -1,7 +1,6 @@
 import styles from "@/styles/Session.module.css";
 import Link from "next/link";
 import {Price} from "@/pages/infos";
-import SessionDetail from "./SessionDetail";
 
 export default function Session() {
     return (
