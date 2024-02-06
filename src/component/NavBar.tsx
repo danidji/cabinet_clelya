@@ -1,5 +1,5 @@
 import styles from "@/styles/Home.module.css";
-import navStyles from "@/styles/NavBar.module.css";
+import navStyles from "@/styles/Navbar.module.css";
 
 const nav_menu = [
     {id: "story", label: "Mon Histoire"},
