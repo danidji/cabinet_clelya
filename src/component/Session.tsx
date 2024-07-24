@@ -23,7 +23,7 @@ export default function Session() {
                     Prendre Rendez-Vous : <strong>07 63 75 72 73</strong>
                 </p>
                 <p>
-                    <Link href={"/boutique"}>Voir plus de détail sur les séances</Link>
+                    <Link href={"/infos"}>Voir plus de détail sur les séances</Link>
                 </p>
             </div>
         </div>
