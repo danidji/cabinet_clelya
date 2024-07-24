@@ -85,34 +85,17 @@ export default function Shop() {
                         </div>
                     </div>
                     <div className={styles.presentation_shop}>
-                        <h2>Séances au Cabinet</h2>
+                        <h2>Séances au cabinet ou en visio</h2>
                         <p>
-                            Profitez d&apos;une séance en personne dans notre cabinet pour 60 euros, offrant une consultation approfondie d&apos;une
-                            heure.
+                            Profitez d&apos;une séance en personne dans notre cabinet, ou en visio pour 60 euros, offrant une consultation approfondie
+                            d&apos;une heure.
                         </p>
-
-                        <h2>Séances en Visio avec Paylib</h2>
-                        <p>Optez pour la flexibilité avec nos séances en visio. Choisissez la durée qui vous convient, avec des tarifs clairs :</p>
-                        <ul className={styles.ul_price}>
-                            <li>
-                                <span className={styles.span_text}>8 min : 18,90€</span>
-                            </li>
-                            <li>
-                                <span className={styles.span_text}>15 min : 29,90€</span>
-                            </li>
-                            <li>
-                                <span className={styles.span_text}>30 min : 57,90€</span>
-                            </li>
-                        </ul>
 
                         <p>
                             Pour réserver votre séance, appelez-moi au <span className={styles.span_text}>07.63.75.72.73</span> pour discuter de vos
                             besoins et de vos disponibilités. Nous choisirons ensemble un jour et une heure pour votre consultation, puis vous pourrez
                             procéder au paiement via Paylib pour confirmer votre rendez-vous.
                         </p>
-
-                        <h2>Extension du Temps en Visio</h2>
-                        <p>Prolongez votre expérience en ajoutant du temps à votre séance en visio, à des tarifs flexibles.</p>
 
                         <p>Explorez le monde mystérieux de la voyance avec simplicité, et laissez-vous guider par nos consultations authentiques.</p>
                         <p>
